@@ -320,6 +320,14 @@ p {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  font-size: var(--font-size-xm);
+}
+
+.pixel-footer-content p {
+  font-size: 0.7rem; /* 著作権表示のサイズをさらに小さく設定 */
+  text-align: center;
+  width: 100%; /* 幅を100%にして中央揃えを確保 */
+  color: #888; /* 少し薄い色にして控えめに */
 }
 
 .pixel-social-links {
