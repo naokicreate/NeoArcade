@@ -1,15 +1,15 @@
 /* Mine製品ページ用スタイル */
 
 :root {
-  --pixel-primary: #a96dec;
-  --pixel-secondary: #312fc7;
-  --pixel-accent: #6365da;
+  --pixel-primary: #ec6dc6;
+  --pixel-secondary: #413fdf;
+  --pixel-accent: #8183ff;
   --pixel-dark: #2d2d2d;
   --pixel-light: #ffffff;
   --pixel-success: #6abe30;
   --pixel-border-width: 4px;
   --pixel-shadow-distance: 4px;
-  --pixel-size: 2px;
+  --pixel-size: 1px;
 }
 
 /* ヘッダーのロゴアイコン */
