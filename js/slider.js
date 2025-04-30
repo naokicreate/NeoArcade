@@ -46,10 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // 前後のスライドにクラスを設定
         slides[prevIndex].classList.add('prev');
         slides[nextIndex].classList.add('next');
-    }
-      // 初期化処理
+    }      // 初期化処理
     function initSlider() {
         console.log('スライダー初期化中...');
+        console.log(`初期化時のスライド数: ${totalSlides}`);
+        console.log(`初期化時のドットボタン数: ${dots.length}`);
+        
         // 全てのドットボタンをリセット
         dots.forEach(dot => {
             dot.classList.remove('active');
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 自動スライドを開始
         startAutoSlide();
-    }    // 特定のスライドに移動
+    }// 特定のスライドに移動
     function goToSlide(index) {
         console.log(`スライド ${index} へ移動`);
         if (isAnimating) {
