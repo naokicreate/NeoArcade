@@ -16,22 +16,7 @@
   --pixel-font-scale: 0.85;            /* ピクセルフォント用スケール係数 */
 }
 
-/* ヘッダーのロゴアイコン */
-.header-icon {
-  width: calc(var(--font-size-base) * 2);
-  height: calc(var(--font-size-base) * 2);
-  margin-right: var(--spacing-sm);
-  vertical-align: middle;
-}
-
-.pixel-logo a {
-  display: flex;
-  align-items: center;
-  color: var(--mine-accent, var(--pixel-accent));
-  text-decoration: none;
-  font-size: var(--font-size-2xl);
-  font-family: var(--font-heading);
-}
+/* ヘッダースタイルは header-style.css に移動しました */
 
 /* フォント設定 */
 body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
@@ -62,7 +47,7 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
  * タイポグラフィ
  * ========================== */
 .content-title {
-  font-size: calc(var(--font-size-xl) * var(--pixel-font-scale));
+  font-size: calc(var(--font-size-2xl) * var(--pixel-font-scale));
   font-family: var(--font-heading);
   color: var(--mine-accent, var(--pixel-accent));
   margin-bottom: var(--spacing-md);
@@ -263,6 +248,21 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
   .pixel-nav ul {
     flex-direction: column;
     gap: var(--spacing-xs);
+    height: auto;
+  }
+
+  .pixel-nav li {
+    height: auto;
+  }
+  
+  .pixel-button {
+    height: auto;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .pixel-logo a {
+    height: auto;
+    padding: var(--spacing-xs) 0;
   }
   
   .content-title {

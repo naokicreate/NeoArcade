@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mine - 操作説明</title>
-    <link rel="stylesheet" href="../css/reset.css">
+    <title>Mine - 操作説明</title>    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/page-transitions.css">
+    <link rel="stylesheet" href="../css/header-style.css">
+    <link rel="stylesheet" href="mine-buttons.css">
     <link rel="stylesheet" href="mine-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="icon" href="../img/mine_icon.ico">
@@ -33,9 +35,11 @@
                         <div class="step-content">
                             <img src="../img/manual_002.png" alt="ゲーム開始画面" class="game-screenshot">
                             <div class="step-description">
-                                <p>ゲームを起動すると、難易度選択画面が表示されます。<br>
-                                    初めての方は5x6マスから始めることをお勧めします。<br>
-                                    難易度を選んで[START]クリックするとゲームが開始します。</p>
+                                <p>ゲームを起動すると、難易度選択画面が表示されます。</p>
+                                <ul class="feature-list">
+                                    <li>初めての方は5x6マスから始めることをお勧めします。</li>
+                                    <li>難易度を選んで[START]クリックするとゲームが開始します。</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -53,49 +57,36 @@
                             </div>
                         </div>
                     </div>
-                      <div class="manual-step">
-                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">3. 地雷の位置を推測する</h2>
+                    <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">3. 3D視点を操作する</h2>
                         <div class="step-content">
-                            <img src="../img/0003.png" alt="地雷の位置を推測" class="game-screenshot">
-                            <div class="step-description">
-                                <p>表示された数字をヒントに、地雷の位置を推測していきます。確実に地雷だと判断したマスには旗を立てましょう。</p>
-                                <ul class="feature-list">
-                                    <li><strong>右クリック</strong>で旗を立てる/解除する</li>
-                                    <li>画面上部の数字は、まだ見つかっていない地雷の数を表示しています</li>
-                                    <li>旗を立てると残り地雷数のカウントが減ります</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                      <div class="manual-step">
-                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">4. 周囲のマスを一括で開く</h2>
-                        <div class="step-content">
-                            <img src="../img/0002.png" alt="周囲のマスを一括で開く" class="game-screenshot">
-                            <div class="step-description">
-                                <p>数字が表示されているマスの周囲に、その数字分の旗を立てたら、残りのマスを一括で開くことができます。</p>
-                                <ul class="feature-list">
-                                    <li><strong>ホイールクリック</strong>（またはマウス中央ボタン）で周囲のマスを一括で開く</li>
-                                    <li>この操作は、数字が表示されているマスでのみ有効です</li>
-                                    <li>旗の数が表示されている数字と一致していない場合は何も起こりません</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                      <div class="manual-step">
-                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">5. 3D視点を操作する</h2>
-                        <div class="step-content">
-                            <img src="../img/0001.png" alt="3D視点を操作" class="game-screenshot">
+                            <img src="../img/manual_004.png" alt="3D視点を操作" class="game-screenshot">
                             <div class="step-description">
                                 <p>Mineは3D環境で遊べるマインスイーパーです。視点を変えることで、より戦略的にゲームを進めることができます。</p>
                                 <ul class="feature-list">
-                                    <li><strong>W/A/S/D</strong> - カメラ視点の移動</li>
-                                    <li><strong>Q/E</strong> - カメラを左右に回転</li>
-                                    <li><strong>マウスホイール</strong> - ズームイン/アウト</li>
+                                    <li><strong>W/A/S/Dキー</strong> - キャラの移動</li>
+                                    <li><strong>マウス移動</strong> - カメラを回転</li>
+                                    <li><strong>Spaceキー</strong> - ホバリング</li>
                                     <li><strong>ESCキー</strong> - ゲームメニューを開く</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">4. 地雷の位置を推測する</h2>
+                        <div class="step-content">
+                            <img src="../img/manual_004.png" alt="地雷の位置を推測" class="game-screenshot">
+                            <div class="step-description">
+                                <p>表示された数字をヒントに、地雷の位置を推測していきます。確実に地雷だと判断したマスには旗を立てましょう。</p>
+                                <ul class="feature-list">
+                                    <li><strong>右クリック</strong>で旗を立てる/解除する</li>
+                                    <li>画面上部の数字は、まだ見つかっていない地雷の数を表示しています</li>
+                                    <li>旗を立てると残り地雷数のカウントが増えます</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </section>
             </div>

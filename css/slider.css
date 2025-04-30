@@ -61,11 +61,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem;
-  background-color: rgba(45, 45, 45, 0.8);
+  padding: var(--spacing-lg);
+  background-color: rgba(var(--pixel-dark-rgb), 0.8);
   color: var(--pixel-light);
   text-align: center;
-  transition: all 0.5s ease-in-out;
+  transition: all var(--transition-speed) ease-in-out;
   opacity: 0;
 }
 
@@ -74,15 +74,15 @@
 }
 
 .pixel-slide-content h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--pixel-primary);
-  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-secondary);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--pixel-secondary);
+  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-primary);
 }
 
 .pixel-slide-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* スライダーコントロール */
