@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドット風デザインサイト</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/nav-buttons.css">
+    <link rel="stylesheet" href="css/page-transitions.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DotGothic16&display=swap" rel="stylesheet">
+</head>
+<body>    <!-- ヘッダー部分（固定表示） -->
+    <header class="pixel-header">
+        <div class="pixel-container">
+            <div class="pixel-logo">
+                <h1>Neo Arcade</h1>
+            </div>            <nav class="pixel-nav">                <ul>
+                    <li><a href="#home" class="pixel-button">ホーム</a></li>
+                    <li><a href="#about" class="pixel-button">製品情報</a></li>
+                    <!-- お問い合わせリンクは削除されました -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="pixel-container">
+        <!-- メインコンテンツ -->
+        <main class="main-content">            <!-- 画像スライダー -->
+            <section id="home" class="pixel-slider-container">
+                <div class="pixel-slider">
+                    <div class="pixel-slide active">
+                        <img src="img/0001.png" alt="スライド1">
+                        <div class="pixel-slide-content">
+                            <h2>ようこそ！</h2>
+                            <p>このサイトはドット絵風デザインのテンプレートです。</p>
+                            <a href="#about" class="pixel-button large">詳細を見る</a>
+                        </div>
+                    </div>
+                    <div class="pixel-slide">
+                        <img src="img/0002.png" alt="スライド2">
+                        <div class="pixel-slide-content">
+                            <h2>ピクセルアート</h2>
+                            <p>レトロなデザインでモダンなウェブサイトを。</p>
+                        </div>
+                    </div>
+                    <div class="pixel-slide">
+                        <img src="img/0003.png" alt="スライド3">
+                        <div class="pixel-slide-content">
+                            <h2>日本語もドット風</h2>
+                            <p>日本語テキストもドット風フォントでデザインされています。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 左右の矢印ボタン -->
+                <button class="pixel-nav-button prev-button">&lt;</button>
+                <button class="pixel-nav-button next-button">&gt;</button>
+                <div class="pixel-slider-controls">
+                    <div class="pixel-dots">
+                        <button class="pixel-dot active" data-slide="0"></button>
+                        <button class="pixel-dot" data-slide="1"></button>
+                        <button class="pixel-dot" data-slide="2"></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- サイトについてセクション -->
+            <section id="about" class="pixel-section">
+                <div class="pixel-section-header">
+                    <h2>製品情報</h2>
+                    <div class="pixel-divider"></div>
+                </div>                <div class="pixel-section-content">                
+                    <a href="mine-page/product.html" style="text-decoration: none;">
+                        <div class="pixel-card">
+                            <img src="img/mine_icon.ico" alt="Mine Icon" class="pixel-icon">
+                            <h3>Mine</h3>
+                            <p>ルールはマインスイーパー！<br>3Dな新感覚アクションゲームを作成しました。</p>
+                        </div>
+                    </a>
+                </div>
+            </section>            <!-- お問い合わせセクションは削除されました -->
+        </main>
+
+        <!-- フッター -->
+        <footer class="pixel-footer">
+            <div class="pixel-footer-content">
+                <p>&copy; 2025 Neo Arcade Studios. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/page-transitions.js"></script>
+    <!-- contact.jsは削除されました -->
+    <script>
+        // スライダーの読み込み確認
+        console.log('スライダースクリプトが読み込まれました');
+    </script>
+</body>
+</html>

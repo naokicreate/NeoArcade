@@ -1,0 +1,271 @@
+/* Mine製品ページ用スタイル */
+
+:root {
+  --pixel-primary: #a96dec;
+  --pixel-secondary: #312fc7;
+  --pixel-accent: #6365da;
+  --pixel-dark: #2d2d2d;
+  --pixel-light: #ffffff;
+  --pixel-success: #6abe30;
+  --pixel-border-width: 4px;
+  --pixel-shadow-distance: 4px;
+  --pixel-size: 2px;
+}
+
+/* ヘッダーのロゴアイコン */
+.header-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.pixel-logo a {
+  display: flex;
+  align-items: center;
+  color: var(--pixel-accent);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: 'Press Start 2P', 'DotGothic16', sans-serif;
+}
+
+/* フォント設定 */
+body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
+  font-family: 'DotGothic16', 'Press Start 2P', sans-serif;
+  font-size: 0.95rem;
+}
+
+/**
+ * ページレイアウト
+ * ========================== */
+.page-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--content-padding);
+  background-color: rgba(45, 45, 45, 0.9);
+  border: var(--pixel-border-width) solid var(--pixel-primary);
+  box-shadow: var(--pixel-shadow-distance) var(--pixel-shadow-distance) 0 0 var(--pixel-secondary);
+}
+
+.content-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: var(--pixel-border-width) solid var(--pixel-accent);
+}
+
+/**
+ * タイポグラフィ
+ * ========================== */
+.content-title {
+  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  color: var(--pixel-accent);
+  margin-bottom: 1.2rem;
+  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-primary);
+}
+
+.content-subtitle {
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  color: var(--pixel-primary);
+  margin: 1.2rem 0 0.8rem 0;
+}
+
+/**
+ * リスト要素
+ * ========================== */
+.feature-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.feature-list li {
+  padding: 0.4rem 0 0.4rem 1.2rem;
+  position: relative;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+}
+
+.feature-list li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--pixel-accent);
+}
+
+.game-screenshot {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  border: var(--pixel-border-width) solid var(--pixel-primary);
+  box-shadow: var(--pixel-shadow-distance) var(--pixel-shadow-distance) 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.download-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--pixel-success);
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  box-shadow: var(--pixel-border-width) var(--pixel-border-width) 0 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--pixel-border-width) + 2px) calc(var(--pixel-border-width) + 2px) 0 0 rgba(0, 0, 0, 0.5);
+}
+
+/* クレジットページ用スタイル */
+.credits-section {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.producer-credit {
+  text-align: center;
+}
+
+.role-section {
+  border-left: 3px solid var(--pixel-accent);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* マニュアルページ用スタイル */
+.manual-step {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: var(--pixel-border-width) solid var(--pixel-accent);
+  position: relative;
+}
+
+.manual-step:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--pixel-primary);
+  transform: rotate(45deg);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step-description {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.step-description p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.game-goal {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: rgba(66, 133, 244, 0.1);
+  border: var(--pixel-border-width) dashed var(--pixel-primary);
+  text-align: center;
+}
+
+/**
+ * レスポンシブ対応
+ * ========================== */
+@media screen and (min-width: var(--breakpoint-md)) {
+  .step-content {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .game-screenshot {
+    width: 50%;
+    margin: 0;
+  }
+  
+  .step-description {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: var(--breakpoint-md)) {
+  .page-container {
+    padding: var(--content-padding);
+  }
+  
+  .content-section {
+    padding: 1rem;
+  }
+  
+  .manual-step {
+    padding: 1rem;
+  }
+  
+  .manual-step:before {
+    left: 10px;
+    width: calc(var(--manual-step-marker-size) - 5px);
+    height: calc(var(--manual-step-marker-size) - 5px);
+  }
+}
+
+@media screen and (max-width: var(--breakpoint-sm)) {
+  .content-title {
+    font-size: 1.1rem;
+  }
+  
+  .content-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* テーブルスタイル */
+.specs-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+}
+
+.specs-table th, .specs-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--pixel-secondary);
+}
+
+.specs-table th {
+  background-color: var(--pixel-primary);
+  color: var(--pixel-light);
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+  .pixel-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .content-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .content-subtitle {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="vi                            <img src="../img/0001.png" alt="3D視点を操作" class="game-screenshot">wport" content="width=device-width, initial-scale=1.0">    <title>Mine - 操作説明</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/page-transitions.css">
+    <link rel="stylesheet" href="mine-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/mine_icon.ico">
+</head>
+<body>
+    <!-- ヘッダープレースホルダー -->
+    <div id="header-placeholder"></div>
+    
+    <div class="pixel-container">
+        <main class="main-content">
+            <div class="page-container">
+                <section class="content-section">
+                    
+                    <h1 class="content-title" style="font-size: 1.9rem">操作説明マニュアル</h1>
+                    <p>Mineの基本操作をステップバイステップで解説します。</p>
+                                        
+                    <div class="game-goal">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">ゲームの目的</h2>
+                        <p>地雷が埋まっていないすべてのマスを開くことが目標です。<br>
+                            地雷のあるマスを誤って開いてしまうとゲームオーバーになります。<br>
+                            すべての地雷に旗を立て、残りのマスをすべて開くとクリアです！</p>
+                    </div>
+                      <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">1. ゲームを開始する</h2>
+                        <div class="step-content">
+                            <img src="../img/0001.png" alt="ゲーム開始画面" class="game-screenshot">
+                            <div class="step-description">
+                                <p>ゲームを起動すると、難易度選択画面が表示されます。初めての方は「初級」から始めることをお勧めします。難易度を選んでクリックするとゲームが開始します。</p>
+                                <ul class="feature-list">
+                                    <li><strong>初級</strong> - 9×9マス、地雷10個</li>
+                                    <li><strong>中級</strong> - 16×16マス、地雷40個</li>
+                                    <li><strong>上級</strong> - 30×16マス、地雷99個</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">2. 最初のマスを開く</h2>
+                        <div class="step-content">
+                            <img src="../img/0002.png" alt="最初のマスを開く" class="game-screenshot">
+                            <div class="step-description">
+                                <p>マインスイーパーの第一歩は、最初のマスを開くことです。角や端から始めると効率的です。</p>
+                                <ul class="feature-list">
+                                    <li><strong>左クリック</strong>でマスを開きます</li>
+                                    <li>最初にクリックしたマスは必ず安全です（地雷は配置されません）</li>
+                                    <li>数字が表示されたら、それは周囲8マスにある地雷の数を示しています</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">3. 地雷の位置を推測する</h2>
+                        <div class="step-content">
+                            <img src="../img/0003.png" alt="地雷の位置を推測" class="game-screenshot">
+                            <div class="step-description">
+                                <p>表示された数字をヒントに、地雷の位置を推測していきます。確実に地雷だと判断したマスには旗を立てましょう。</p>
+                                <ul class="feature-list">
+                                    <li><strong>右クリック</strong>で旗を立てる/解除する</li>
+                                    <li>画面上部の数字は、まだ見つかっていない地雷の数を表示しています</li>
+                                    <li>旗を立てると残り地雷数のカウントが減ります</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">4. 周囲のマスを一括で開く</h2>
+                        <div class="step-content">
+                            <img src="../img/0002.png" alt="周囲のマスを一括で開く" class="game-screenshot">
+                            <div class="step-description">
+                                <p>数字が表示されているマスの周囲に、その数字分の旗を立てたら、残りのマスを一括で開くことができます。</p>
+                                <ul class="feature-list">
+                                    <li><strong>ホイールクリック</strong>（またはマウス中央ボタン）で周囲のマスを一括で開く</li>
+                                    <li>この操作は、数字が表示されているマスでのみ有効です</li>
+                                    <li>旗の数が表示されている数字と一致していない場合は何も起こりません</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="manual-step">
+                        <h2 class="content-subtitle" style="font-size: 1.4rem; font-weight: bold;">5. 3D視点を操作する</h2>
+                        <div class="step-content">
+                            <img src="../img/0001.png" alt="3D視点を操作" class="game-screenshot">
+                            <div class="step-description">
+                                <p>Mineは3D環境で遊べるマインスイーパーです。視点を変えることで、より戦略的にゲームを進めることができます。</p>
+                                <ul class="feature-list">
+                                    <li><strong>W/A/S/D</strong> - カメラ視点の移動</li>
+                                    <li><strong>Q/E</strong> - カメラを左右に回転</li>
+                                    <li><strong>マウスホイール</strong> - ズームイン/アウト</li>
+                                    <li><strong>ESCキー</strong> - ゲームメニューを開く</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="header-loader.js"></script>
+    <script src="../js/page-transitions.js"></script>
+</body>
+</html>
+

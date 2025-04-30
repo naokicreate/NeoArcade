@@ -1,0 +1,448 @@
+/**
+ * Mine Project CSS
+ * メインスタイルシート
+ */
+
+/* 変数ファイルのインポート */
+@import 'variables.css';
+
+/**
+ * グローバルスタイル
+ * ========================== */
+html {
+  scroll-behavior: smooth;
+  image-rendering: pixelated;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-feature-settings: "palt";
+  background-color: var(--pixel-dark);
+  color: var(--pixel-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  image-rendering: pixelated;
+}
+
+/**
+ * タイポグラフィ
+ * ========================== */
+h1, h2, h3, h4, p, a, button, input, textarea, label, .pixel-button {
+  font-family: var(--font-primary);
+  letter-spacing: -0.05em;
+  word-spacing: 0.1em;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/**
+ * レイアウト
+ * ========================== */
+.pixel-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+/* メインコンテンツ（ヘッダーの固定による調整） */
+.main-content {
+  padding-top: calc(var(--header-height) + 1rem); /* ヘッダーの高さ + 余白 */
+}
+
+/**
+ * コンポーネント: ボタン
+ * ========================== */
+.pixel-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--pixel-primary);
+  color: white;
+  border: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  margin: 4px;
+  image-rendering: pixelated;
+  
+  /* ピクセル風ボーダー */
+  box-shadow: 
+    var(--pixel-border-width) var(--pixel-border-width) 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.pixel-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 
+    calc(var(--pixel-border-width) + 2px) 
+    calc(var(--pixel-border-width) + 2px) 
+    0 0 rgba(0, 0, 0, 0.5);
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 
+    calc(var(--pixel-border-width) - 2px) 
+    calc(var(--pixel-border-width) - 2px) 
+    0 0 rgba(0, 0, 0, 0.5);
+}
+
+.pixel-button.large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/**
+ * コンポーネント: ヘッダー
+ * ========================== */
+.pixel-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: var(--pixel-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: var(--pixel-border-width) solid var(--pixel-primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-header .pixel-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pixel-logo h1 {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  color: var(--pixel-accent);
+  text-shadow: 
+    calc(var(--pixel-size) * 0.5) 0 0 rgba(var(--pixel-primary-rgb), 0.8),
+    0 calc(var(--pixel-size) * 0.5) 0 rgba(var(--pixel-primary-rgb), 0.8),
+    calc(var(--pixel-size) * 0.5) calc(var(--pixel-size) * 0.5) 0 rgba(var(--pixel-primary-rgb), 0.8);
+}
+
+.pixel-nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.pixel-nav li {
+  list-style: none;
+}
+
+/* ヒーローセクション */
+.pixel-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70vh;
+  padding: 2rem 0;
+}
+
+.pixel-hero-content {
+  flex: 1;
+}
+
+.pixel-hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--pixel-accent);
+  text-shadow: calc(var(--pixel-size) * 0.1) calc(var(--pixel-size) * 0.1) 0 rgba(var(--pixel-primary-rgb), 0.1);
+}
+
+.pixel-hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pixel-art-character {
+  width: 200px;
+  height: 200px;
+  background-color: var(--pixel-secondary);
+  margin-left: 2rem;
+  position: relative;
+  
+  /* 簡易的なピクセルキャラクター表現 */
+  box-shadow:
+    calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 0 var(--pixel-primary),
+    calc(var(--pixel-size) * -2) calc(var(--pixel-size) * 2) 0 0 var(--pixel-primary),
+    0 calc(var(--pixel-size) * -4) 0 0 var(--pixel-accent);
+  
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+/* セクション共通スタイル */
+.pixel-section {
+  padding: 3rem 0;
+  border-top: var(--pixel-border-width) dashed var(--pixel-secondary);
+}
+
+.pixel-section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pixel-section-header h2 {
+  font-size: 2rem;
+  color: var(--pixel-accent);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--pixel-dark);
+  position: relative;
+  z-index: 1;
+  text-shadow: calc(var(--pixel-size) * 0.1) calc(var(--pixel-size) * 0.1) 0 rgba(var(--pixel-primary-rgb), 0.1);
+}
+
+.pixel-divider {
+  height: var(--pixel-size);
+  background-color: var(--pixel-primary);
+  margin: -1.2rem auto 2rem;
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+}
+
+.pixel-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+/* カード */
+.pixel-card {
+  background-color: var(--pixel-dark);
+  padding: 1.5rem;
+  border: var(--pixel-border-width) solid var(--pixel-primary);
+  width: 300px;
+  text-align: center;
+  box-shadow: var(--pixel-shadow-distance) var(--pixel-shadow-distance) 0 0 var(--pixel-secondary);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pixel-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: calc(var(--pixel-shadow-distance) + 4px) calc(var(--pixel-shadow-distance) + 4px) 0 0 var(--pixel-secondary);
+}
+
+.pixel-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+  display: block;
+}
+
+.pixel-icon-design {
+  mask-image: linear-gradient(45deg, var(--pixel-accent) 25%, transparent 25%), 
+              linear-gradient(-45deg, var(--pixel-accent) 25%, transparent 25%), 
+              linear-gradient(45deg, transparent 75%, var(--pixel-accent) 75%), 
+              linear-gradient(-45deg, transparent 75%, var(--pixel-accent) 75%);
+  mask-size: 20px 20px;
+  mask-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.pixel-icon-responsive {
+  position: relative;
+}
+
+.pixel-icon-responsive::before,
+.pixel-icon-responsive::after {
+  content: '';
+  position: absolute;
+  background-color: var(--pixel-dark);
+}
+
+.pixel-icon-responsive::before {
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  top: 15%;
+}
+
+.pixel-icon-responsive::after {
+  width: 40%;
+  height: 40%;
+  left: 30%;
+  top: 30%;
+  background-color: var(--pixel-primary);
+}
+
+.pixel-icon-animation {
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* ギャラリー */
+.pixel-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.pixel-gallery-item {
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.pixel-gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.pixel-gallery-image {
+  height: 200px;
+  background-color: var(--pixel-secondary);
+  border: var(--pixel-border-width) solid var(--pixel-light);
+}
+
+.pixelart-1 { background-color: var(--pixel-primary); }
+.pixelart-2 { background-color: var(--pixel-secondary); }
+.pixelart-3 { background-color: var(--pixel-accent); }
+.pixelart-4 { background-color: var(--pixel-success); }
+
+.pixel-gallery-caption {
+  padding: 0.5rem;
+  background-color: var(--pixel-dark);
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  border: var(--pixel-border-width) solid var(--pixel-light);
+  border-top: none;
+}
+
+/* フォーム関連のスタイルは削除されました */
+
+/* フッター */
+.pixel-footer {
+  padding: 2rem 0;
+  background-color: var(--pixel-dark);
+  border-top: var(--pixel-border-width) solid var(--pixel-primary);
+  margin-top: 3rem;
+}
+
+.pixel-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pixel-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.pixel-social-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: var(--pixel-light);
+}
+
+.social-twitter { background-color: #1DA1F2; }
+.social-instagram { background-color: #E1306C; }
+.social-github { background-color: #333; }
+
+/* フォームステータスのスタイルは削除されました */
+
+/**
+ * レスポンシブデザイン
+ * ========================== */
+@media screen and (max-width: var(--breakpoint-md)) {
+  .pixel-header {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+  
+  .pixel-logo {
+    margin-bottom: 1rem;
+  }
+  
+  .pixel-nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pixel-nav li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .pixel-hero {
+    flex-direction: column;
+  }
+  
+  .pixel-art-character {
+    margin: 2rem 0 0 0;
+  }
+  
+  .pixel-section-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* メインコンテンツのパディング調整 (ヘッダーサイズ変更に対応) */
+  .main-content {
+    padding-top: 7rem; 
+  }
+}
+
+@media screen and (max-width: var(--breakpoint-sm)) {
+  .pixel-hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .pixel-hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .pixel-section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .pixel-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .pixel-gallery-item {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* メインコンテンツのさらなる調整 */
+  .main-content {
+    padding-top: 8rem; 
+  }
+}

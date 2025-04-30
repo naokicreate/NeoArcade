@@ -1,0 +1,155 @@
+/* 画像スライダー */
+.pixel-slider-container {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  margin-left: calc(-50vw + 50%);
+  /* 画面の横幅全体に広げる */
+}
+
+.pixel-slider {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.pixel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel-slide.active {
+  opacity: 1;
+  z-index: 2;
+  transform: translateX(0);
+}
+
+.pixel-slide.next {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.pixel-slide.prev {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.pixel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+  max-height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.pixel-slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background-color: rgba(45, 45, 45, 0.8);
+  color: var(--pixel-light);
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.pixel-slide.active .pixel-slide-content {
+  opacity: 1;
+}
+
+.pixel-slide-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--pixel-primary);
+  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-secondary);
+}
+
+.pixel-slide-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* スライダーコントロール */
+.pixel-slider-controls {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pixel-dots {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.pixel-dot {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--pixel-primary);
+  background-color: var(--pixel-secondary);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  padding: 0;
+  border-radius: 0;
+}
+
+.pixel-dot.active {
+  opacity: 1;
+  background-color: var(--pixel-primary);
+  transform: scale(1.2);
+  box-shadow: var(--pixel-size) var(--pixel-size) 0 0 rgba(0, 0, 0, 0.3);
+}
+
+/* スライダーのアニメーション */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-from-right {
+  animation: slideInFromRight 0.6s forwards;
+}
+
+.slide-out-to-left {
+  animation: slideOutToLeft 0.6s forwards;
+}

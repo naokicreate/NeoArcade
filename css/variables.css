@@ -1,0 +1,59 @@
+/* 
+ * Mine Project CSS Variables
+ * すべてのCSSファイルで共有される変数を定義
+ */
+
+:root {  /* カラーパレット */
+  --pixel-primary: #956ec2;    /* メインカラー */
+  --pixel-primary-rgb: 149, 110, 194; /* メインカラーRGB値 */
+  --pixel-secondary: #9a99db;  /* セカンダリーカラー */
+  --pixel-secondary-rgb: 154, 153, 219; /* セカンダリーカラーRGB値 */
+  --pixel-accent: #cccdff;     /* アクセントカラー */
+  --pixel-accent-rgb: 204, 205, 255; /* アクセントカラーRGB値 */
+  --pixel-dark: #2d2d2d;       /* 背景色・暗色 */
+  --pixel-dark-rgb: 45, 45, 45; /* 背景色・暗色RGB値 */
+  --pixel-light: #f0f0f0;      /* テキスト色・明色 */
+  --pixel-light-rgb: 240, 240, 240; /* テキスト色・明色RGB値 */
+  --pixel-success: #6abe30;    /* 成功/アクション用色 */
+  --pixel-success-rgb: 106, 190, 48; /* 成功/アクション用色RGB値 */
+  
+  /* サイズ設定 */
+  --pixel-border-width: 4px;     /* ボーダー幅 */
+  --pixel-shadow-distance: 4px;  /* シャドウ距離 */
+  --pixel-size: 2px;             /* ピクセル基本サイズ */
+  
+  /* フォント設定 */
+  --font-pixel: 'Press Start 2P', cursive;       /* 英字用ピクセルフォント */
+  --font-jp-pixel: 'DotGothic16', sans-serif;    /* 日本語用ドットフォント */
+  --font-mono: 'VT323', monospace;               /* 等幅フォント */
+  --font-primary: var(--font-jp-pixel), var(--font-pixel), sans-serif;  /* 基本フォント */
+  --font-heading: var(--font-pixel), var(--font-jp-pixel), sans-serif;  /* 見出し用フォント */
+  
+  /* 共通サイズ */
+  --container-max-width: 1200px;  /* コンテナ最大幅 */
+  --header-height: 4.5rem;        /* ヘッダー高さ */
+  --content-padding: 2rem;        /* コンテンツ内部余白 */
+  
+  /* ブレイクポイント */
+  --breakpoint-md: 768px;  /* タブレットサイズ */
+  --breakpoint-sm: 480px;  /* スマホサイズ */
+}
+
+/* レスポンシブ設定 - タブレット */
+@media screen and (max-width: var(--breakpoint-md)) {
+  :root {
+    --pixel-border-width: 3px;
+    --pixel-shadow-distance: 3px;
+    --content-padding: 1.5rem;
+  }
+}
+
+/* レスポンシブ設定 - スマホ */
+@media screen and (max-width: var(--breakpoint-sm)) {
+  :root {
+    --pixel-border-width: 2px;
+    --pixel-shadow-distance: 2px;
+    --pixel-size: 2px;
+    --content-padding: 1rem;
+  }
+}
