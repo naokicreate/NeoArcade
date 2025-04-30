@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="css/page-transitions.css">
     <link rel="stylesheet" href="css/header-style.css">
     <link rel="stylesheet" href="css/home-buttons.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DotGothic16&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ヘッダー部分（固定表示） -->
-    <header class="pixel-header">
+    <!-- ヘッダー部分（固定表示） -->    <header class="pixel-header">
         <div class="pixel-container">
             <div class="pixel-logo">
                 <h1>Neo Arcade</h1>
             </div>
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="pixel-nav">
                 <ul>
                     <li><a href="#home" class="home-button">ホーム</a></li>
@@ -92,6 +97,7 @@
     </style>    <script src="js/main.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/page-transitions.js"></script>
+    <script src="js/responsive-menu.js"></script>
     <!-- contact.jsは削除されました -->
     <script>
         // スライダーの読み込み確認

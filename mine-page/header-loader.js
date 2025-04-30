@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             
+            // レスポンシブメニューのスクリプトを読み込み、実行する
+            const script = document.createElement('script');
+            script.src = 'mine-responsive-menu.js';
+            document.body.appendChild(script);
+            
             // 現在のページのURLを取得
             const currentPath = window.location.pathname;
             const currentPage = currentPath.split('/').pop();

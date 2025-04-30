@@ -1,0 +1,161 @@
+/* Mine ページ用レスポンシブデザイン用CSS */
+
+/* デフォルトではハンバーガーメニューを非表示 */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 1000;
+    padding: 0;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 1px var(--darkest-color);
+}
+
+/* スマホ表示用スタイル */
+@media screen and (max-width: 768px) {
+    /* コンテナの調整 */
+    .pixel-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    /* ヘッダーレイアウト調整 */
+    .pixel-header .pixel-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    
+    /* ロゴを小さく */
+    .pixel-logo a {
+        font-size: 1.2rem;
+    }
+    
+    .header-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    
+    /* ハンバーガーメニューを表示 */
+    .hamburger-menu {
+        display: block;
+    }
+    
+    /* ナビゲーションをオーバーレイ表示にする */
+    .pixel-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--darkest-color);
+        transition: right 0.3s ease;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 70px;
+        overflow-y: auto;
+    }
+    
+    /* メニューが開いた時のスタイル */
+    .pixel-nav.open {
+        right: 0;
+    }
+    
+    /* メニュー項目を縦並びにする */
+    .pixel-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .pixel-nav li {
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .pixel-nav a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    /* ハンバーガーメニューがアクティブ時のスタイル */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+    
+    /* オーバーレイ背景 */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        display: none;
+    }
+    
+    .menu-overlay.show {
+        display: block;
+    }
+    
+    /* コンテンツエリアの調整 */
+    .main-content {
+        margin-top: 60px;
+        padding: 10px;
+    }
+    
+    /* セクションのスタイル調整 */
+    .pixel-section {
+        padding: 20px 10px;
+    }
+    
+    /* 画像サイズの調整 */
+    img.responsive {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* テーブルのスクロール対応 */
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
+/* さらに小さい画面用 */
+@media screen and (max-width: 480px) {
+    .pixel-logo a {
+        font-size: 1rem;
+    }
+    
+    .pixel-nav {
+        width: 100%;
+    }
+}
