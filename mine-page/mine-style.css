@@ -1,40 +1,42 @@
 /* Mine製品ページ用スタイル */
 
+/* 
+ * マインページ独自のカスタム変数
+ * variables.cssから継承した値をオーバーライド
+ */
 :root {
-  --pixel-primary: #b149ee;
-  --pixel-secondary: #413fdf;
-  --pixel-accent: #8183ff;
-  --pixel-dark: #2d2d2d;
-  --pixel-light: #ffffff;
-  --pixel-success: #6abe30;
-  --pixel-text-shadow: #88497f;
-  --pixel-text: #ff72a1;
-  --pixel-border-width: 4px;
-  --pixel-shadow-distance: 4px;
-  --pixel-size: 1px;
+  /* カスタムカラーの設定 */
+  --mine-primary: #b149ee;             /* Mine用メインカラー */
+  --mine-secondary: #413fdf;           /* Mine用セカンダリーカラー */
+  --mine-accent: #8183ff;              /* Mine用アクセントカラー */
+  --mine-text-shadow: #88497f;         /* Mine用テキストシャドウ色 */
+  --mine-text: #ff72a1;                /* Mine用テキスト色 */
+  
+  /* Press Start 2Pフォント用サイズ調整 */
+  --pixel-font-scale: 0.85;            /* ピクセルフォント用スケール係数 */
 }
 
 /* ヘッダーのロゴアイコン */
 .header-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
+  width: calc(var(--font-size-base) * 2);
+  height: calc(var(--font-size-base) * 2);
+  margin-right: var(--spacing-sm);
   vertical-align: middle;
 }
 
 .pixel-logo a {
   display: flex;
   align-items: center;
-  color: var(--pixel-accent);
+  color: var(--mine-accent, var(--pixel-accent));
   text-decoration: none;
-  font-size: 1.5rem;
-  font-family: 'Press Start 2P', 'DotGothic16', sans-serif;
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-heading);
 }
 
 /* フォント設定 */
 body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
-  font-family: 'DotGothic16', 'Press Start 2P', sans-serif;
-  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
 }
 
 /**
@@ -44,34 +46,34 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: var(--content-padding);
-  background-color: rgba(45, 45, 45, 0.9);
-  border: var(--pixel-border-width) solid var(--pixel-primary);
-  box-shadow: var(--pixel-shadow-distance) var(--pixel-shadow-distance) 0 0 var(--pixel-secondary);
+  background-color: rgba(var(--pixel-dark-rgb), 0.9);
+  border: var(--pixel-border-width) solid var(--mine-primary, var(--pixel-primary));
+  box-shadow: var(--pixel-shadow-distance) var(--pixel-shadow-distance) 0 0 var(--mine-secondary, var(--pixel-secondary));
 }
 
 .content-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
   background-color: rgba(0, 0, 0, 0.2);
-  border-left: var(--pixel-border-width) solid var(--pixel-accent);
+  border-left: var(--pixel-border-width) solid var(--mine-accent, var(--pixel-accent));
 }
 
 /**
  * タイポグラフィ
  * ========================== */
 .content-title {
-  font-size: 1.3rem;
+  font-size: calc(var(--font-size-xl) * var(--pixel-font-scale));
   font-family: var(--font-heading);
-  color: var(--pixel-accent);
-  margin-bottom: 1.2rem;
-  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-text-shadow);
+  color: var(--mine-accent, var(--pixel-accent));
+  margin-bottom: var(--spacing-md);
+  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--mine-text-shadow, var(--pixel-text-shadow));
 }
 
 .content-subtitle {
-  font-size: 1.1rem;
+  font-size: calc(var(--font-size-lg) * var(--pixel-font-scale));
   font-family: var(--font-heading);
-  color: var(--pixel-text);
-  margin: 1.2rem 0 0.8rem 0;
+  color: var(--mine-text, var(--pixel-text));
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
 }
 
 /**
@@ -80,48 +82,48 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
 .feature-list {
   list-style-type: none;
   padding: 0;
-  margin: 0.5rem 0 1.5rem 0;
+  margin: var(--spacing-sm) 0 var(--spacing-lg) 0;
 }
 
 .feature-list li {
-  padding: 0.4rem 0 0.4rem 1.2rem;
+  padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-lg);
   position: relative;
   font-family: var(--font-primary);
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
 }
 
 .feature-list li::before {
   content: '>';
   position: absolute;
   left: 0;
-  color: var(--pixel-accent);
+  color: var(--mine-accent, var(--pixel-accent));
 }
 
 .game-screenshot {
   width: 100%;
   max-width: 720px;
   height: auto;
-  margin: 1rem auto;
+  margin: var(--spacing-md) auto;
   display: block;
-  border: var(--pixel-border-width) solid var(--pixel-primary);
+  border: var(--pixel-border-width) solid var(--mine-primary, var(--pixel-primary));
   box-shadow: var(--pixel-shadow-distance) var(--pixel-shadow-distance) 0 0 rgba(0, 0, 0, 0.5);
 }
 
 .download-button {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: var(--spacing-md) var(--spacing-xl);
   background-color: var(--pixel-success);
-  color: white;
+  color: var(--pixel-light);
   text-decoration: none;
-  font-size: 1.2rem;
-  margin: 1rem 0;
+  font-size: var(--font-size-lg);
+  margin: var(--spacing-md) 0;
   box-shadow: var(--pixel-border-width) var(--pixel-border-width) 0 0 rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .download-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: calc(var(--pixel-border-width) + 2px) calc(var(--pixel-border-width) + 2px) 0 0 rgba(0, 0, 0, 0.5);
+  transform: translate(calc(var(--pixel-size) * -1), calc(var(--pixel-size) * -1));
+  box-shadow: calc(var(--pixel-border-width) + var(--pixel-size)) calc(var(--pixel-border-width) + var(--pixel-size)) 0 0 rgba(0, 0, 0, 0.5);
 }
 
 /* クレジットページ用スタイル */
@@ -228,11 +230,11 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
 
 @media screen and (max-width: var(--breakpoint-sm)) {
   .content-title {
-    font-size: 1.1rem;
+    font-size: calc(var(--font-size-md) * var(--pixel-font-scale));
   }
   
   .content-subtitle {
-    font-size: 1rem;
+    font-size: calc(var(--font-size-sm) * var(--pixel-font-scale));
   }
 }
 
@@ -259,15 +261,15 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
 @media screen and (max-width: 768px) {
   .pixel-nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-xs);
   }
   
   .content-title {
-    font-size: 1.5rem;
+    font-size: calc(var(--font-size-xl) * var(--pixel-font-scale));
     font-weight: bold;
   }
   
   .content-subtitle {
-    font-size: 1.3rem;
+    font-size: calc(var(--font-size-lg) * var(--pixel-font-scale));
   }
 }

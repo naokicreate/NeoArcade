@@ -3,7 +3,8 @@
  * すべてのCSSファイルで共有される変数を定義
  */
 
-:root {  /* カラーパレット */
+:root {
+  /* カラーパレット */
   --pixel-primary: #956ec2;    /* メインカラー */
   --pixel-primary-rgb: 149, 110, 194; /* メインカラーRGB値 */
   --pixel-secondary: #9a99db;  /* セカンダリーカラー */
@@ -14,8 +15,10 @@
   --pixel-dark-rgb: 45, 45, 45; /* 背景色・暗色RGB値 */
   --pixel-light: #f0f0f0;      /* テキスト色・明色 */
   --pixel-light-rgb: 240, 240, 240; /* テキスト色・明色RGB値 */
-  --pixel-success: #6abe30;    /* 成功/アクション用色 */
+  --pixel-success: #305dbe;    /* 成功/アクション用色 */
   --pixel-success-rgb: 106, 190, 48; /* 成功/アクション用色RGB値 */
+  --pixel-text-shadow: #88497f; /* テキストシャドウ色 */
+  --pixel-text: #ff72a1;       /* 特殊テキスト色 */
   
   /* サイズ設定 */
   --pixel-border-width: 4px;     /* ボーダー幅 */
@@ -28,15 +31,36 @@
   --font-mono: 'VT323', monospace;               /* 等幅フォント */
   --font-primary: var(--font-jp-pixel), var(--font-pixel), sans-serif;  /* 基本フォント */
   --font-heading: var(--font-pixel), var(--font-jp-pixel), sans-serif;  /* 見出し用フォント */
+    /* フォントサイズ */
+  --font-size-base: 0.9rem;            /* 基本フォントサイズ */
+  --font-size-xs: 0.675rem;            /* 極小テキスト */
+  --font-size-sm: 0.785rem;            /* 小さいテキスト */
+  --font-size-md: 0.9rem;              /* 標準テキスト */
+  --font-size-lg: 1.3rem;                /* 大きめテキスト */
+  --font-size-xl: 1.5rem;            /* 大きいテキスト */
+  --font-size-2xl: 1.35rem;            /* 見出しレベル2 */
+  --font-size-3xl: 1.6rem;             /* 見出しレベル1 */
+  --font-size-4xl: 2rem;               /* 特大テキスト */
+  
+  /* スペーシング（余白）設定 */
+  --spacing-xs: 0.25rem;               /* 極小余白 */
+  --spacing-sm: 0.5rem;                /* 小余白 */
+  --spacing-md: 1rem;                  /* 中余白 */
+  --spacing-lg: 1.5rem;                /* 大余白 */
+  --spacing-xl: 2rem;                  /* 特大余白 */
+  --spacing-2xl: 3rem;                 /* 超特大余白 */
   
   /* 共通サイズ */
-  --container-max-width: 1200px;  /* コンテナ最大幅 */
-  --header-height: 4.5rem;        /* ヘッダー高さ */
-  --content-padding: 2rem;        /* コンテンツ内部余白 */
+  --container-max-width: 1200px;       /* コンテナ最大幅 */
+  --header-height: 4.5rem;             /* ヘッダー高さ */
+  --content-padding: var(--spacing-xl); /* コンテンツ内部余白 */
+  
+  /* アニメーション */
+  --transition-speed: 0.3s;            /* 標準トランジション速度 */
   
   /* ブレイクポイント */
-  --breakpoint-md: 768px;  /* タブレットサイズ */
-  --breakpoint-sm: 480px;  /* スマホサイズ */
+  --breakpoint-md: 768px;              /* タブレットサイズ */
+  --breakpoint-sm: 480px;              /* スマホサイズ */
 }
 
 /* レスポンシブ設定 - タブレット */
