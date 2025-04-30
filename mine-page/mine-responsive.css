@@ -157,11 +157,29 @@ body.menu-open {
     .menu-overlay.show {
         display: block;
     }
-    
-    /* コンテンツエリアの調整 */
+      /* コンテンツエリアの調整 */
     .main-content {
         margin-top: 60px;
         padding: 10px;
+    }
+    
+    /* page-containerのラインとマージンを消す */
+    .page-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    
+    /* content-sectionをページ全体の幅に */
+    .content-section {
+        width: 100%;
+        margin: 0 0 20px 0;
+        padding: 15px 10px;
+        border-left: none;
+        background-color: rgba(0, 0, 0, 0.3);
     }
     
     /* セクションのスタイル調整 */
@@ -188,10 +206,12 @@ body.menu-open {
         padding: 8px 5px;
         font-size: 0.9rem;
     }
-    
-    /* ダウンロードページの調整 */
+      /* ダウンロードページの調整 */
     .download-card {
         padding: 1rem;
+        margin: 0.5rem 0;
+        border-left: 2px solid var(--pixel-accent);
+        width: 100%;
     }
     
     .download-platform {
@@ -205,10 +225,12 @@ body.menu-open {
     .download-info span {
         font-size: 0.8rem;
     }
-    
-    .mine-button {
+      .mine-button {
         padding: 8px 15px;
         font-size: 0.9rem;
+        width: 100%;
+        margin: 5px 0;
+        display: block;
     }
 }
 
@@ -220,5 +242,23 @@ body.menu-open {
     
     .pixel-nav {
         width: 100%;
+    }
+    
+    /* page-containerとcontent-sectionのさらなる調整 */
+    .page-container {
+        padding: 5px;
+    }
+    
+    .content-section {
+        padding: 12px 8px;
+    }
+    
+    /* テキストサイズの調整 */
+    .content-title {
+        font-size: 1.3rem;
+    }
+    
+    .content-subtitle {
+        font-size: 1.1rem;
     }
 }
