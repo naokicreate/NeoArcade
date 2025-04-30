@@ -1,12 +1,14 @@
 /* Mine製品ページ用スタイル */
 
 :root {
-  --pixel-primary: #ec6dc6;
+  --pixel-primary: #b149ee;
   --pixel-secondary: #413fdf;
   --pixel-accent: #8183ff;
   --pixel-dark: #2d2d2d;
   --pixel-light: #ffffff;
   --pixel-success: #6abe30;
+  --pixel-text-shadow: #88497f;
+  --pixel-text: #ff72a1;
   --pixel-border-width: 4px;
   --pixel-shadow-distance: 4px;
   --pixel-size: 1px;
@@ -62,13 +64,13 @@ body, h1, h2, h3, h4, p, a, button, input, textarea, label, li, span {
   font-family: var(--font-heading);
   color: var(--pixel-accent);
   margin-bottom: 1.2rem;
-  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-primary);
+  text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-text-shadow);
 }
 
 .content-subtitle {
   font-size: 1.1rem;
   font-family: var(--font-heading);
-  color: var(--pixel-primary);
+  color: var(--pixel-text);
   margin: 1.2rem 0 0.8rem 0;
 }
 
