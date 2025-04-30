@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="../css/page-transitions.css">
     <link rel="stylesheet" href="mine-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DotGothic16&display=swap" rel="stylesheet">
-    <link rel="icon" href="../img/mine_icon.ico">
-    <style>
+    <link rel="icon" href="../img/mine_icon.ico">    <style>
         .faq-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-lg);
             border-bottom: 2px dotted var(--pixel-secondary);
         }
           .faq-question {
-            font-size: 1.2rem;
+            font-size: var(--font-size-lg);
             font-weight: bold;
-            color: var(--pixel-primary);
-            margin-bottom: 0.5rem;
+            color: var(--mine-primary, var(--pixel-primary));
+            margin-bottom: var(--spacing-xs);
             cursor: pointer;
         }
           .faq-answer {
-            font-family: 'VT323', monospace;
-            font-size: 1.2rem;
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--pixel-accent);
+            font-family: var(--font-primary);
+            font-size: var(--font-size-md);
+            padding-left: var(--spacing-lg);
+            border-left: 2px solid var(--mine-accent, var(--pixel-accent));
         }
         
         /* お問い合わせフォームのスタイルは削除されました */
@@ -40,7 +39,7 @@
         <main class="main-content">
             <div class="page-container">
                 <section class="content-section">
-                    <h1 class="content-title" style="font-size: 1.9rem">Support</h1>
+                    <h1 class="content-title" style="font-size: calc(var(--font-size-3xl) * var(--pixel-font-scale)); text-shadow: var(--pixel-size) var(--pixel-size) 0 var(--pixel-text-shadow);">Support</h1>
                     <p>Mineに関するよくある質問や問題解決のためのサポート情報を提供しています。</p>
                     
                     <h2 class="content-subtitle">よくある質問</h2>
@@ -68,11 +67,10 @@
                             問題が解決しない場合は、公式SNSよりご連絡ください。
                         </div>
                     </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">Q: マルチレイヤーモードありますか</div>
+                      <div class="faq-item">
+                        <div class="faq-question">Q: マルチプレイヤーモードはありますか？</div>
                         <div class="faq-answer">
-                            A: 現在のバジョンではマルチレイヤーモード実裁れてぁせんが、今後アチトで追加する予定です。最新惁は公式SNSをご確認ください、
+                            A: 現在のバージョンではマルチプレイヤーモードは実装されていませんが、今後のアップデートで追加する予定です。最新情報は公式SNSをご確認ください。
                         </div>
                     </div>
                     
@@ -85,12 +83,10 @@
                         <li><a href="#">セーブデータの復旧方法</a></li>
                     </ul>
                       <h2 class="content-subtitle">お問い合わせ</h2>
-                    <p>お問い合わせ機能は現在メンテナンス中です。お急ぎの場合は公式SNSよりご連絡ください。</p>
-                      <h2 class="content-subtitle">SNS・コミュニティ</h2>
-                    <p>公式SNSアカウントやユーザーコミュニティで最新情報や他のプレイヤーとつながりましょう：</p>
+                    <p>お問い合わせ機能は現在メンテナンス中です。</p>                      <h2 class="content-subtitle">SNS・コミュニティ</h2>
+                    <p>メール: neoarcade0331@gmail.com</p>
                     <ul class="feature-list">
-                        <li><a href="#">X（Twitter）: 現在メンテナンス中です。
-                        </a></li>
+                        <li><a href="#">X（Twitter）: 現在メンテナンス中です。</a></li>
                     </ul>
                 </section>
             </div>
