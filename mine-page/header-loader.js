@@ -4,14 +4,52 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('header.html')
         .then(response => {
             return response.text();
-        })
-        .then(data => {
+        })        .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             
             // レスポンシブメニューのスクリプトを読み込み、実行する
-            const script = document.createElement('script');
-            script.src = 'mine-responsive-menu.js';
-            document.body.appendChild(script);
+            setTimeout(() => {
+                const hamburgerMenu = document.getElementById('hamburgerMenu');
+                const pixelNav = document.querySelector('.pixel-nav');
+                const body = document.body;
+                
+                // メニューオーバーレイ要素を作成
+                const overlay = document.createElement('div');
+                overlay.classList.add('menu-overlay');
+                body.appendChild(overlay);
+                
+                if (hamburgerMenu) {
+                    hamburgerMenu.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        pixelNav.classList.toggle('open');
+                        overlay.classList.toggle('show');
+                        body.classList.toggle('menu-open');
+                    });
+                }
+                
+                // オーバーレイクリック時にメニューを閉じる
+                overlay.addEventListener('click', function() {
+                    if (hamburgerMenu) {
+                        hamburgerMenu.classList.remove('active');
+                        pixelNav.classList.remove('open');
+                        this.classList.remove('show');
+                        body.classList.remove('menu-open');
+                    }
+                });
+                
+                // メニューリンククリック時にメニューを閉じる
+                const menuLinks = document.querySelectorAll('.pixel-nav a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (hamburgerMenu) {
+                            hamburgerMenu.classList.remove('active');
+                            pixelNav.classList.remove('open');
+                            overlay.classList.remove('show');
+                            body.classList.remove('menu-open');
+                        }
+                    });
+                });
+            }, 100);
             
             // 現在のページのURLを取得
             const currentPath = window.location.pathname;
