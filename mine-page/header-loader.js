@@ -7,6 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
         })        .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             
+            // ページ遷移用のデータ属性を持つリンクにイベントリスナーを追加
+            document.querySelectorAll('a[data-page-transition="true"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    
+                    // トランジションデータを保存
+                    sessionStorage.setItem('lastTransition', JSON.stringify({
+                        from: window.location.href,
+                        to: href,
+                        timestamp: new Date().getTime()
+                    }));
+                    
+                    // 0.5秒後に遷移
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                    
+                    // トランジションエフェクトの適用
+                    document.body.classList.add('fade-out');
+                });
+            });
+            
             // レスポンシブメニューのスクリプトを読み込み、実行する
             setTimeout(() => {
                 const hamburgerMenu = document.getElementById('hamburgerMenu');
