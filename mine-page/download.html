@@ -61,7 +61,7 @@
                             <span>Size: 350MB<br>
                             OS: Windows 10/11 (64bit)</span>
                         </div>
-                        <a href="#" class="download-button pixel-button large" style="background-color: gray;">2025年リリース予定</a>
+                        <button class="download-button pixel-button large" style="background-color: gray;">2025年リリース予定</button>
                     </div>
                     
                     <h2 class="content-subtitle">追加コンテンツ</h2>
@@ -72,7 +72,7 @@
                             <span>Size: ---<br>
                             Version: ---</span>
                         </div>
-                        <a href="#" class="download-button pixel-button large" style="background-color: gray;">Comming Soon...</a>
+                        <button class="download-button pixel-button large" style="background-color: gray;">Comming Soon...</button>
                     </div>
                     
                     <h2 class="content-subtitle">旧バージョン</h2>
@@ -91,6 +91,19 @@
     
     <script src="header-loader.js"></script>
     <script src="../js/page-transitions.js"></script>
+    <script>
+        // 現在リリース前のボタンをクリックした際のイベント処理
+        document.querySelectorAll('.download-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // クリックイベントのデフォルト動作をキャンセル
+                e.preventDefault();
+                // オプション: クリック時に何かメッセージを表示する
+                if (this.textContent.includes('リリース予定') || this.textContent.includes('Comming Soon')) {
+                    alert('このコンテンツは現在開発中です。リリースをお待ちください。');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
